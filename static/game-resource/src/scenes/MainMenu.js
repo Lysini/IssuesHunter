@@ -7,14 +7,6 @@ import MainMenuPointsTexts from '../ui/MainMenuPointsTexts';
 
 import background from  '../assets/sprites/background.png'
 
-import green from  '../assets/sprites/colors/green.png'
-import green_hover from  '../assets/sprites/colors/green_hover.png'
-import green_active from  '../assets/sprites/colors/green_active.png'
-
-import gray from  '../assets/sprites/colors/gray.png'
-import gray_hover from  '../assets/sprites/colors/gray_hover.png'
-import gray_active from  '../assets/sprites/colors/gray_active.png'
-
 export const perksConfig = {
     walls: {
         pointsPrice: {stage_0: 0, stage_1: 1, stage_2: 2, stage_3: 3},
@@ -142,14 +134,6 @@ export default class MainMenu extends Phaser.Scene {
 
     preload(){
         this.load.image('background', background);
-
-        this.load.image('green', green);
-        this.load.image('green_hover', green_hover);
-        this.load.image('green_active', green_active);
-
-        this.load.image('gray', gray);
-        this.load.image('gray_hover', gray_hover);
-        this.load.image('gray_active', gray_active);
     }
 
     setUserPointsForIssues(issues){
