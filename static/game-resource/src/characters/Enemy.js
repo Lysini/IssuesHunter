@@ -48,7 +48,10 @@ export default class Enemy extends Character {
 
         this.lastShotTime = this.scene.time.now
         this.lastAddAmmoTime = this.scene.time.now + this.ammoRegenerationTime
-        this.nextGrenadeTime = - 2 * this.scene.difficultyConfig.enemyMaxGrenadePause;
+        this.nextGrenadeTime = this.scene.time.now + Phaser.Math.Between(
+            this.scene.difficultyConfig.enemyMinGrenadePause,
+            this.scene.difficultyConfig.enemyMaxGrenadePause
+        );
 
         this.isKilled = false;
 
@@ -285,7 +288,10 @@ export default class Enemy extends Character {
             this.hasWalkDestination = false;
             if(this.isInitialMove){
                 this.isInitialMove = false;
-                this.nextGrenadeTime = this.scene.time.now + Phaser.Math.Between(4 * 1000, 10 * 1000)
+                this.nextGrenadeTime = this.scene.time.now + Phaser.Math.Between(
+                    this.scene.difficultyConfig.enemyMinGrenadePause,
+                    this.scene.difficultyConfig.enemyMaxGrenadePause
+                )
                 this.lastShotTime = this.scene.time.now - this.shootingPauseTime + Phaser.Math.Between(100, 2000)
             }
         }

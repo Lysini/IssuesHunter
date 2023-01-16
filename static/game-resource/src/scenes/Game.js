@@ -103,30 +103,30 @@ const wallsVariants = {
 
 const getDifficultyConfig = (wave) => {
     const limits = {
-        enemyMaxBulletSpeed: 800,
+        enemyMaxBulletSpeed: 700,
 
         pistolMinShootingPause: 1500,
         pistolMinAmmoRegenerationTime: 1500,
 
-        rifleMinShootingPause: 100,
+        rifleMinShootingPause: 120,
         rifleMinAmmoRegenerationTime: 4000,
 
-        shotgunMinShootingPause: 1000,
+        shotgunMinShootingPause: 1500,
         shotgunMinAmmoRegenerationTime: 5000,
 
         enemyMaxGrenadeDamage: 70,
 
         enemyMaxGrenadeRange: 100,
 
-        maxRifleEnemies: 6,
+        maxRifleEnemies: 5,
 
-        maxShotgunEnemies: 4,
+        maxShotgunEnemies: 3,
 
-        maxGrenadesEnemies: 7,
+        maxGrenadesEnemies: 4,
 
         maxEnemyHP: 40,
 
-        enemyMaxBulletDamage: 15,
+        enemyMaxBulletDamage: 10,
 
         maxEnemies: 15,
 
@@ -142,24 +142,24 @@ const getDifficultyConfig = (wave) => {
         rifleShootingPause: Math.max(150 - (wave - 1) * 2, limits.rifleMinShootingPause),
         rifleAmmoRegenerationTime: Math.max(6000 - (wave - 1) * 60, limits.rifleMinAmmoRegenerationTime),
 
-        shotgunShootingPause: Math.max(2000 - (wave - 1) * 40, limits.shotgunMinShootingPause),
+        shotgunShootingPause: Math.max(3000 - (wave - 1) * 40, limits.shotgunMinShootingPause),
         shotgunAmmoRegenerationTime: Math.max(10000 - (wave - 1) * 200, limits.shotgunMinAmmoRegenerationTime),
         
         enemyGrenadeDamage: Math.min(Math.floor(20 + (wave - 1) * 1.5), limits.enemyMaxGrenadeDamage),
         enemyGrenadeRange: Math.min(50 + (wave - 1) * 2 , limits.enemyMaxGrenadeRange),
         
         enemyMinGrenadePause: 10 * 1000,
-        enemyMaxGrenadePause: 20 * 1000,
+        enemyMaxGrenadePause: 30 * 1000,
         
-        rifleEnemies: Math.min(Math.floor(0 + (wave - 1) * 0.5), limits.maxRifleEnemies),
+        rifleEnemies: Math.min(Math.floor(0 + (wave - 1) * 0.2), limits.maxRifleEnemies),
         
-        shotgunEnemies: Math.min(Math.floor(0 + (wave - 1) * 1), limits.maxShotgunEnemies),
+        shotgunEnemies: Math.min(Math.floor(0 + (wave - 1) * 0.3), limits.maxShotgunEnemies),
 
-        grenadesEnemies: Math.min(Math.floor(3 + (wave - 1) * 3.75), limits.maxGrenadesEnemies),
+        grenadesEnemies: Math.min(Math.floor(2 + (wave - 1) * 3.75), limits.maxGrenadesEnemies),
         
         enemyHP: Math.min(Math.floor(20 + (wave - 1) * 2), limits.maxEnemyHP),
 
-        enemyBulletDamage: Math.min(Math.floor(5 + (wave - 1) * 0.4), limits.enemyMaxBulletDamage),
+        enemyBulletDamage: Math.min(Math.floor(5 + (wave - 1) * 0.2), limits.enemyMaxBulletDamage),
 
         enemies: Math.min(Math.floor(10 + (wave - 1) * 0.3), limits.maxEnemies),
 
@@ -187,8 +187,8 @@ export default class Game extends Phaser.Scene {
     playerConfig = {
         playerMovesYPadding: 20,
         // in miliseconds
-        playerShootingPause: 150,
-        playerBulletSpeed: 700,
+        playerShootingPause: 110,
+        playerBulletSpeed: 750,
         playerGrenadePause: 200,
         playerGrenadeRange: 100,
         maxPlayerGrenadeDamage: 40,

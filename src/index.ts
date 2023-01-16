@@ -20,8 +20,7 @@ const extractIssuesFromResponse = async (response) => {
 }
 
 const getUserIssuesURL = (maxResults=50, startAt=0) => {
-    return route`/rest/api/2/search?jql=assignee=currentuser()&maxResults=${maxResults}&startAt=${startAt}&fields=status,statuscategorychangedate
-    `
+    return route`/rest/api/2/search?jql=assignee=currentuser()&maxResults=${maxResults}&startAt=${startAt}&fields=status,statuscategorychangedate`
 }
 
 resolver.define(RESOLVERS.GET_USER_ISSUES, async () => {

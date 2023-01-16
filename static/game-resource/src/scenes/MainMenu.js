@@ -73,7 +73,7 @@ export const perksConfig = {
     }
 }
 
-perksOrder = [
+const perksOrder = [
     'walls', 'moveSpeed', 'rofSpeed', 'bulletSpeed', 'enemyBulletSpeed', 
     'maxHP', 'maxGrenades', 'maxShields', 'lowerDamage'
 ]
